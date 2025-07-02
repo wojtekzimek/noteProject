@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&family=Poiret+One&display=swap" rel="stylesheet">
+    <!-- my-styles -->
+    <link rel="stylesheet" href="./styles/main_settings.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/note_styles.css">
+    <link rel="stylesheet" href="./styles/notes_styles.css">
+    <title>To do</title>
+</head>
+
+<body>
+
+    <!-- <div id="calendar"></div>
+      <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const calendarEl = document.getElementById('calendar');
+
+      const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,listWeek'
+        },
+        events: [
+          {
+            title: 'Notatka: spotkanie z Janem',
+            start: '2025-06-14T14:00:00',
+            end: '2025-06-15T15:00:00'
+          },
+          {
+            title: 'Przypomnienie: odebrać dzieci',
+            start: '2025-06-15T17:30:00'
+          }
+        ]
+      });
+
+      calendar.render();
+    });
+  </script> -->
+
+    <header>
+        <div class="logo">
+            <div class="menu-hamburger" id="menuHamburger">&#x25B6</div>
+            <h1>TO DO List</h1>
+        </div>
+        <div class="form-add-note-box" id="formAddNoteBox">
+            <div class="form-add-note-Xcancel" id="formAddNoteXcancel">X</div>
+            <!-- <img src="./images/close.png" alt="x-close-button" class="form-add-note-Xcancel"> -->
+            <form id="formAddNote" class="form-add-note">
+                <div class="form-note-group">
+                    <div class="form-note-element">
+                        <label for="taskSheduledDate">Zaplanuj na: </label>
+                        <input type="datetime-local" id="taskSheduledDate">
+                    </div>
+                </div>
+                <div class="form-note-group">
+                    <div class="form-note-element">
+                        <label for="taskCompletionDate">Dead line: </label>
+                        <input type="datetime-local" id="taskCompletionDate">
+                    </div>
+                </div>
+                <div class="form-note-group">
+                    <div class="form-note-element">
+                        <label for="taskTarget">Dla kogo: </label>
+                        <select id="taskTarget">
+                            <!-- <option value="1">KUL</option>
+                            <option value="2">NewTech</option>
+                            <option value="3" selected>Domowe</option> -->
+                        </select>
+                    </div>
+                </div>
+                <div class="form-note-group">
+                    <div class="form-note-element">
+                        <label for="taskDefaultNote">Notatka: </label>
+                        <select id="taskDefaultNote"></select>
+                    </div>
+                    <div class="form-note-element">
+                        <textarea id="taskNote"></textarea>
+                    </div>
+                </div>
+                <div class="form-note-buttons">
+                    <input type="button" id="addNoteBtn" value="Zapisz">
+                    <input type="button" id="closeNoteBtn" value="Anuluj">
+                </div>
+
+            </form>
+        </div>
+    </header>
+    <main>
+        <div class="main-notes-container">
+            <div class="nav-options-container">
+                <div class="nav-options-section">
+                    <label for="filterNotes">Wybierz&nbsp;notatki:</label>
+                    <select class="select-options" id="filterNotes">
+                        <option value="0" selected>Wszystkie</option>
+                        <option value="1">Na dzisiaj</option>
+                        <option value="2">Zakres dat</option>
+                        <option value="3">Do zrobienia</option>
+                        <option value="4">Zrobione</option>
+                    </select>
+                </div>
+                <div class="nav-options-section" id="dateRange">
+                    <div class="form-note-element">
+                        <label for="dateRangeFrom">Od: </label>
+                        <input type="date" id="dateRangeFrom">
+                    </div>
+                    <div class="form-note-element">
+                        <label for="dateRangeTo">Do: </label>
+                        <input type="date" id="dateRangeTo">
+                    </div>
+                </div>
+                <div class="nav-options-section">
+                    <label for="sortNotes">Sortuj:</label>
+                    <select class="select-options" id="sortNotes">
+                        <option value="0">Kolejność dodawania</option>
+                        <option value="1" selected>Daty rosnąco</option>
+                        <option value="2">Daty malejąco</option>
+                    </select>
+                </div>
+            </div>
+            <div class="notes-container" id="notesContainer"></div>
+        </div>
+    
+    </main>
+
+    <script src="./scripts/form_data.js"></script>
+    <script src="./scripts/indexDB.js"></script>
+    <script src="./scripts/note_class.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/notes_class.js"></script>
+</body>
+
+</html>

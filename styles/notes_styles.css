@@ -1,0 +1,61 @@
+div.main-notes-container{
+    background-color: var(--notes-bgColor);
+    position: relative;
+    flex-grow: 1;
+}
+
+div.nav-options-container{
+    height: var(--nav-bar-height);
+    display: flex;
+    align-items: center;
+    padding-right: 3px;
+    width: fit-content;
+    color: var(--header-formInputsColor);
+    /* pasek nawigacji łączy z nagłówkiem */
+    background-color: var(--header-bgColor); 
+}
+
+.nav-options-section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    /* width: var(--nav-options-width); */
+    width: fit-content;
+    padding: 0px 7px;
+    /* background-color: var(--header-bgColor); */
+    border-right: 1px ridge var(--nav-borderLineColor);
+    height: var(--nav-options-height);
+}
+
+.nav-options-section>.menu-hamburger{
+    font-size: 1.6em;
+}
+
+.nav-date-range-display{
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.nav-date-range-form{
+    background-color: var(--header-bgColor);
+    position: absolute;
+    top: 35px;
+    left: 20px;
+}
+
+.nav-date-range-form label,
+.nav-date-range-form input{
+    font-size: 0.8em;
+    padding: 2px;
+}
+
+/* *** ostylowanie kontenera notatek */
+.notes-container{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 17px;
+}

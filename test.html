@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #my-confirm {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .confirm-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="my-confirm" class="hidden">
+        <div class="confirm-box">
+            <p id="confirm-text"></p>
+            <button id="confirm-yes">Tak</button>
+            <button id="confirm-no">Nie</button>
+        </div>
+    </div>
+
+    <script>
+        function customConfirm(message) {
+  return new Promise((resolve) => {
+    document.getElementById('confirm-text').textContent = message;
+    document.getElementById('my-confirm').classList.remove('hidden');
+
+    const yesBtn = document.getElementById('confirm-yes');
+    const noBtn = document.getElementById('confirm-no');
+
+    const cleanup = () => {
+      document.getElementById('my-confirm').classList.add('hidden');
+      yesBtn.removeEventListener('click', yesHandler);
+      noBtn.removeEventListener('click', noHandler);
+    };
+
+    const yesHandler = () => { cleanup(); resolve(true); };
+    const noHandler = () => { cleanup(); resolve(false); };
+
+    yesBtn.addEventListener('click', yesHandler);
+    noBtn.addEventListener('click', noHandler);
+  });
+}
+    customConfirm("Na pewno chcesz usunąć?").then((result) => {
+  if (result) {
+    console.log("Potwierdzono");
+  } else {
+    console.log("Anulowano");
+  }
+});
+
+    </script>
+</body>
+
+</html>

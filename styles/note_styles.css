@@ -1,0 +1,137 @@
+.div-note{
+    width: 250px;
+    user-select: none;
+    position: relative;
+    padding: 7px;
+    box-shadow: inset 0 2px 5px rgba(255,255,255,0.8),
+    inset 0 -2px 5px rgba(0,0,0,0.2),
+    0 2px 4px rgba(0,0,0,0.3);
+    /* outline: 4px ridge coral; - testowane dla wybranej karteczki*/
+    display: flex; /* do wypełnienia przez kontent całej karteczki */
+    flex-direction: column;
+    justify-content: start;
+}
+.div-note-0{
+    background-color: var(--main-note-bgColor-0);
+}
+.div-note-1{
+    background-color: var(--main-note-bgColor-1);
+}
+.div-note-2{
+    background-color: var(--main-note-bgColor-2);
+}
+
+/* nagłówek notatki */
+.note-header{
+    /* background: linear-gradient(to bottom, rgb(142, 192, 42), yellowgreen, rgb(142, 192, 42)); */
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--hader-note-bgColor);
+}
+/* ostylowanie div z datami */
+.note-header>div:nth-of-type(1){
+    /* padding: 0px 0px 0px 3px; */
+}
+.note-header>div:nth-of-type(1)>h2:nth-of-type(1){
+    padding: 7px 0px 7px 7px;
+    /* text-align: center; */
+}
+/* -- span z zaplanowaną datą */
+.note-header>div:nth-of-type(1)>h2:nth-of-type(1)>span:nth-of-type(1){
+    font-size: 1.0em;
+    letter-spacing: 2px;
+    padding-right: 7px;
+}
+/* -- span z zaplanowaną godziną */
+.note-header>div:nth-of-type(1)>h2:nth-of-type(1)>span:nth-of-type(2){
+    font-size: 0.7em;
+    letter-spacing: 2px;
+}
+/* h2 z dead line */
+.note-header>div:nth-of-type(1)>h2:nth-of-type(2){
+    padding: 3px 0px 3px 7px;
+    font-size: 0.8em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: red;
+}
+
+/* ostylowanie div z opcjami */
+.note-header>div:nth-of-type(2){
+    display: flex;
+    justify-content: end;
+    align-self: start;
+}
+.note-header>div:nth-of-type(2)>div{
+    margin: 4px;
+    padding: 2px;
+    align-self: center;
+}
+.note-header>div:nth-of-type(2)>div:nth-of-type(1){
+    color: blue;
+}
+.note-header>div:nth-of-type(2)>div:nth-of-type(2){
+    color: red;
+}
+.note-header>div:nth-of-type(2)>div:hover{
+    border: 1px dotted gray;
+    border-radius: 5px;
+    background-color: var(--hader-note-bgColorHover);
+}
+
+/* stopka notatki */
+.note-footer{
+    display: flex;
+    justify-content: end;
+    /* background: linear-gradient(to bottom, rgb(142, 192, 42), yellowgreen, rgb(142, 192, 42)); */
+    background-color: var(--footer-note-bgColor);
+}
+.note-footer>div{
+    display: flex;
+    align-items: center;
+    padding: 3px;
+}
+.note-footer>div>label{
+    color: rgb(252, 229, 97);
+    font-size: 0.8em;
+    letter-spacing: 2px;
+}
+.note-footer>div>input{
+    outline: none;
+    opacity: 0.4;
+    display: inline-block;
+}
+.note-done{
+    background-color: greenyellow;
+}
+
+/* zawartość (treść) notatki */
+.note-content{
+    padding: 25px 10px;
+    flex-grow: 1; /* kontent wypełni całą karteczkę */
+    position: relative; /* do pozycjonowania znaku checked */
+}
+.note-content>p{
+    white-space: pre-line;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.note-content>div{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 3.6em;
+    color: lightgreen;
+    text-shadow: 4px 4px 6px rgb(95, 197, 95);
+}
+
+/* ostylowanie szpilki do przesówania */
+.note-pin{
+    font-size: 1.2em;
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: grab;
+}

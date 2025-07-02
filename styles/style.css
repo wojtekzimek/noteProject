@@ -1,0 +1,170 @@
+body>header{
+    background-color: var(--header-bgColor);
+    border-bottom: 3px ridge var(--nav-borderLineColor);
+}
+
+.menu-hamburger{
+    color: var(--triangle--color);
+    font-size: 3em;
+    text-shadow: 5px 1px 5px var(--triangleShadow--color);
+    padding: 14px 7px;
+    user-select: none;
+    transition: transform 0.4s ease;
+}
+
+.menu-hamburger:hover{
+    color: var(--triangleHover-color);
+}
+
+div.logo{
+    display: flex;
+    align-items: center;
+}
+
+div.logo>h1{
+    font-family: "Knewave", system-ui;
+    font-size: 1.9em;
+    color: var(--header-logoFontColor);
+    letter-spacing: 3px;
+    padding: 0px 0px 0px 15px;
+    text-shadow: 3px 3px 7px var(--header-fontShadowColor);
+}
+
+/* ostylowanie elementów formularza dodania notatki */
+
+/* ostylowanie przycisku X-cancel dla formularza */
+div.form-add-note-Xcancel{
+    position: absolute;
+    right: -18px;
+    top: -18px;
+    width: 20px;
+    height: 20px;
+    padding: 1px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Knewave", system-ui;
+    font-weight: bold;
+    color: var(--header-formLabelColor);
+    background-color: var(--header-formInputsBg);
+    box-shadow: 3px 3px 3px var(--header-fontShadowColor);
+}
+
+div.form-add-note-Xcancel:hover{
+    background-color: var(--header-formInputsHoverBg);
+}
+
+/* pudełko formularza */
+div.form-add-note-box{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 100000;
+    padding: 4px;
+    background-color: var(--header-bgColor);
+    box-shadow: 3px 3px 3px var(--header-fontShadowColor);
+    /* animation: fadeIn;
+    animation-duration: 0.4s; */
+}
+
+/* div-y formularza */
+div.form-note-element{
+    display: flex;
+    justify-content: space-between;
+}
+
+div.form-note-element{
+    padding: 1px 0px 1px 3px;
+}
+
+div.form-note-group,
+div.form-note-buttons{
+    padding: 4px;
+}
+
+div.form-note-buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div.form-note-buttons input:nth-of-type(1){
+    color: var(--header-saveNoteColor)
+}
+
+div.form-note-buttons input:nth-of-type(2){
+    color: var(--header-cancelNoteColor)
+}
+
+/* ostylowanie fomuralrza i elementów formularza */
+form{
+    border: 1px solid var(--header-formLabelColor);
+    padding: 3px;
+    background-color: var(--header-bgColor);
+    width: var(--form-width);
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    color: var(--header-formLabelColor);
+    font-weight: bold;
+}
+
+input[type="button"]{
+    font-weight: bold;
+    padding: 4px 21px;
+}
+
+input, 
+select, 
+select>option, 
+textarea{
+    background-color: var(--header-formInputsBg);
+    border: none;
+    color: var(--header-formInputsColor);
+    font-weight: bold;
+    padding: 1px 2px;
+    border-radius: 5px;
+}
+
+select>option{
+    font-size: 0.8em;
+} 
+
+
+input[type="datetime-local"], 
+select{
+    width: var(--form-inputs-width);
+}
+
+textarea{
+    font-size: 0.9em;
+    width: 100%;
+    height: 50px;
+    resize: none;
+    white-space: pre-line;
+}
+
+input:focus, 
+select:focus, 
+textarea:focus{
+    outline: 1px solid var(--header-formInputsColor)
+}
+
+input:hover, 
+select:hover, 
+select>option:focus, 
+textarea:hover{
+    background-color: var(--header-formInputsHoverBg);
+}
+
+.form-error-border{
+    border: 1px solid var(--header-formInputErrorBg);
+}
+
+.notes-section{
+    position: relative;
+}

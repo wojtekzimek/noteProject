@@ -1,0 +1,54 @@
+:root{
+    --header-bgColor: rgb(0, 136, 255);
+    --header-logoFontColor: rgb(143, 255, 22);
+    --triangle--color: rgb(0, 0, 196);
+    --triangleShadow--color: rgb(0, 0, 195);
+    --triangleHover-color: rgb(74, 74, 244);
+    --header-fontShadowColor: rgb(0, 0, 195);
+    /* elementy formularza dodania zadania */
+    --header-lineOverForm: rgb(224, 239, 252);
+    --header-formLabelColor: rgb(224, 239, 252);
+    --header-formInputsColor: rgb(224, 239, 252);
+    --header-formInputsBg: var(--triangle--color); /*rgb(0, 111, 208);*/
+    --header-saveNoteColor: rgb(185, 254, 111);
+    --header-cancelNoteColor: rgb(255, 178, 178);
+    --header-formInputsHoverBg: var(--triangleHover-color);
+    --header-formInputErrorBg: rgb(255, 194, 194);
+    
+    --form-width: 320px;
+    --form-inputs-width: 205px;
+    
+    /* sekcja notatek */
+    --nav-borderLineColor: var(--header-lineOverForm);
+    --notes-bgColor: rgb(206, 232, 255);
+    --nav-bar-height: 35px;
+    --nav-options-height: 30px;
+    --nav-options-width: 350px;
+
+    /* ostylowanie notatki */
+    --main-note-bgColor-0: slateblue; /* KUL */
+    --main-note-bgColor-1: mediumvioletred; /* NewTech */
+    --main-note-bgColor-2: rgb(255, 229, 80); /* Domowe */
+    --hader-note-bgColor: rgb(235, 200, 0);
+    --hader-note-bgColorHover: rgb(223, 190, 7);
+    --footer-note-bgColor: var(--hader-note-bgColor);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Poiret One";
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
