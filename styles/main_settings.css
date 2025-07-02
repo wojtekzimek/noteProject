@@ -26,7 +26,7 @@
     --nav-options-width: 350px;
 
     /* ostylowanie notatki */
-    --main-note-bgColor-0: slateblue; /* KUL */
+    --main-note-bgColor-0: rgb(126, 110, 229); /* KUL */
     --main-note-bgColor-1: mediumvioletred; /* NewTech */
     --main-note-bgColor-2: rgb(255, 229, 80); /* Domowe */
     --hader-note-bgColor: rgb(235, 200, 0);
